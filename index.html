@@ -1,36 +1,66 @@
+</html>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chegg to Homeworkify</title>
-    
-    <!-- Add the following style block for styling -->
+    <title>MonkeyScripts</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f2f2f2;
+        body.dark {
+            background-color: #1F2833;
+            color: #66FCF1;
+        }
+
+        #theme-toggle {
+            background-color: #66FCF1;
+            color: #1F2833;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        #theme-toggle:hover {
+            background-color: #45A29E;
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+            color: white;
         }
 
         header {
-            background-color: #4CAF50;
-            padding: 10px;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1F2833;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             color: white;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Roboto', sans-serif;
+            border-bottom: 3px solid #000;
         }
 
         button {
-            background-color: #4CAF50;
-            color: white;
+            background-color: #66FCF1;
+            color: #1F2833;
             padding: 10px;
             border: none;
             cursor: pointer;
+            border-radius: 10px;
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #45A29E;
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        span {
+            font-size: 25px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
 
         .content {
@@ -38,33 +68,45 @@
         }
     </style>
 </head>
+
 <body>
-
-<!-- Header -->
-<div>
-    <header class="mdl-layout__header">
-        <div>
-            <span>Chegg to Homeworkify</span>
-        </div>
-    </header>
-</div>
-
-<!-- Content -->
-<div class="content">
     <div>
-        <p>Replace "See Answer" button with Homeworkify Button when logged out. Automatically copies Chegg link to clipboard (Need to enable clipboard site permission).</p>
-        <a href="https://github.com/Niloy-Sarker/scripts/raw/main/homeworkify.user.js">
-            <button>
-                Install Script
-            </button>
-        </a>
+        <header>
+            <span>Fancy <br> UserScripts</span>
+            <button id="theme-toggle">Toggle Theme</button>
+        </header>
     </div>
-</div>
 
+    <div class="content">
+        <div>
+            <h1>Chegg to <br>Homeworkify</h1>
+            <hr>
+            <p>Replace "See Answer" button with Homeworkify Button when logged out.<br> Automatically copies Chegg link to
+                clipboard (Need to enable clipboard site permission).</p>
+            <div>
+                
+                <img src="1.png" alt="1" width="40%" height="auto" display: inline-block;>
+                <img src="2.png" alt="2" width="40%" height="auto" display: inline-block;>
+            </div>
+            <p><a href="https://github.com/Niloy-Sarker/scripts/"><button>Source Code</button></a></p>
+            <a href="https://github.com/Niloy-Sarker/scripts/raw/main/homeworkify.user.js">
+                <button>Install Script</button>
+            </a>
+        </div>
+        <hr>
+    </div>
+
+    <script>
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+        if (prefersDarkScheme.matches) {
+            document.body.classList.add('dark');
+        }
+
+        document.getElementById('theme-toggle').addEventListener('click', function () {
+            document.body.classList.toggle('dark');
+        });
+    </script>
 </body>
-</html>
 
-
-
-</body>
 </html>
